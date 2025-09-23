@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: wildcard-cert
+  namespace: traefik
+spec:
+  secretName: wildcard-tls
+  issuerRef:
+    name: technitium-letsencrypt-staging
+    kind: ClusterIssuer
+  commonName: "*.kia-in-control-1.group-4.doe24.chas-lab.dev"
+  dnsNames:
+    - "*.kia-in-control-1.group-4.doe24.chas-lab.dev"
+    - "kia-in-control-1.group-4.doe24.chas-lab.dev"
