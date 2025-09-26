@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/kittizz/cert-manager-technitium-webhook
-    targetRevision: main
+    targetRevision: HEAD
     path: deploy
   destination:
     server: https://kubernetes.default.svc
