@@ -11,7 +11,7 @@ spec:
   source:
     repoURL: https://github.com/kittizz/cert-manager-technitium-webhook
     targetRevision: HEAD
-    path: deploy
+    path: charts/cert-manager-technitium-webhook
   destination:
     server: https://kubernetes.default.svc
     namespace: cert-manager
