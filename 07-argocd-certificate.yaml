@@ -8,7 +8,7 @@ metadata:
 spec:
   secretName: argocd-tls
   dnsNames:
-    - kia-in-control-1.group-4.doe24.chas-lab.dev
+    - is-controlplane-0.group-4.doe24.chas-lab.dev 
   issuerRef:
     name: technitium-letsencrypt-staging
     kind: ClusterIssuer

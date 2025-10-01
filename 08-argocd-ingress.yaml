@@ -10,10 +10,10 @@ spec:
   ingressClassName: traefik
   tls:
   - hosts:
-    - kia-in-control-1.group-4.doe24.chas-lab.dev
+    - is-controlplane-0.group-4.doe24.chas-lab.dev
     secretName: argocd-tls
   rules:
-  - host: kia-in-control-1.group-4.doe24.chas-lab.dev
+  - host: is-controlplane-0.group-4.doe24.chas-lab.dev
     http:
       paths:
       - path: /
