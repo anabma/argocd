@@ -1,36 +1,36 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: traefik
-  namespace: argocd
-  annotations:
-    argocd.argoproj.io/sync-wave: "0"
-spec:
-  project: default
-  source:
-    repoURL: https://traefik.github.io/charts
-    chart: traefik
-    # NOTE: You can adjust the version below to the latest stable if needed.
-    targetRevision: "25.0.0"
-    helm:
-      values: |
-        deployment:
-          replicas: 2
-        ingressClass:
-          enabled: true
-          isDefaultClass: false
-          name: traefik
-        service:
-          type: LoadBalancer
-        logs:
-          general:
-            level: INFO
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: traefik
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions:
-    - CreateNamespace=true
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: traefik
+#   namespace: argocd
+#   annotations:
+#     argocd.argoproj.io/sync-wave: "0"
+# spec:
+#   project: default
+#   source:
+#     repoURL: https://traefik.github.io/charts
+#     chart: traefik
+#     # NOTE: You can adjust the version below to the latest stable if needed.
+#     targetRevision: "25.0.0"
+#     helm:
+#       values: |
+#         deployment:
+#           replicas: 2
+#         ingressClass:
+#           enabled: true
+#           isDefaultClass: false
+#           name: traefik
+#         service:
+#           type: LoadBalancer
+#         logs:
+#           general:
+#             level: INFO
+#   destination:
+#     server: https://kubernetes.default.svc
+#     namespace: traefik
+#   syncPolicy:
+#     automated:
+#       prune: true
+#       selfHeal: true
+#     syncOptions:
+#     - CreateNamespace=true
