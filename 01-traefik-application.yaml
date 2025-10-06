@@ -46,8 +46,8 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://ghcr.io/traefik/helm/traefik
-    chart: traefik/traefik
+    repoURL: https://github.com/traefik/traefik-helm-chart
+    path: traefik
     # NOTE: Update to the latest stable if desired.
     targetRevision: "v37.0.0"
     helm:
