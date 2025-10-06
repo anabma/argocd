@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://gitlab.com/DilSal/is-argo
+    repoURL: https://gitlab.com/DilSal/is-argo.git
     targetRevision: HEAD
     path: cluster-issuer
     directory:
