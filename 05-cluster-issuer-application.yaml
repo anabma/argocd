@@ -13,6 +13,6 @@ spec:
       recurse: true
   destination:
     server: https://kubernetes.default.svc
-    namespace: ""
+    namespace: cert-manager
   syncPolicy:
     automated: {}
