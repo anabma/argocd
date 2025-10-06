@@ -46,10 +46,13 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/traefik/traefik-helm-chart
-    path: traefik
+    #repoURL: https://github.com/traefik/traefik-helm-chart
+    repoURL: https://traefik.github.io/charts
+    #path: traefik
+    chart: traefik
     # NOTE: Update to the latest stable if desired.
-    targetRevision: "v37.0.0"
+    #targetRevision: "v37.0.0"
+    targetRevision: "25.0.0"
     helm:
       values: |
         installCRDs: true
