@@ -8,7 +8,6 @@ spec:
   issuerRef:
     name: technitium-letsencrypt-staging
     kind: ClusterIssuer
-  commonName: "is-controlplane-0.group-4.doe24.chas-lab.dev"
+  commonName: "control-plane-1.group-4.doe24.chas-lab.dev"
   dnsNames:
-    - "is-controlplane-0.group-4.doe24.chas-lab.dev"
-    - "is-controlplane-0.group-4.doe24.chas-lab.dev"
+    - "control-plane-1.group-4.doe24.chas-lab.dev"

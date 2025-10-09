@@ -41,10 +41,10 @@ spec:
   ingressClassName: traefik
   tls:
     - hosts:
-        - is-controlplane-0.group-4.doe24.chas-lab.dev
+        - control-plane-1.group-4.doe24.chas-lab.dev
       secretName: argocd-tls
   rules:
-    - host: is-controlplane-0.group-4.doe24.chas-lab.dev
+    - host: control-plane-1.group-4.doe24.chas-lab.dev
       http:
         paths:
           - path: /
