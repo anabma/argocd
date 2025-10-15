@@ -51,7 +51,7 @@ spec:
   source:
     repoURL: https://traefik.github.io/charts
     chart: traefik
-    targetRevision: "25.0.0"
+    targetRevision: "32.1.1"
     helm:
       values: |
         installCRDs: true
