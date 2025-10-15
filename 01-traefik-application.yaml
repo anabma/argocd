@@ -56,6 +56,11 @@ spec:
     helm:
       values: |
         installCRDs: true
+           providers:
+             kubernetesCRD:
+              allowCrossNamespace: true
+             kubernetesIngress: 
+              allowCrossNamespace: true
   destination:
     server: https://kubernetes.default.svc
     namespace: traefik
