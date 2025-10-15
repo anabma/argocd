@@ -5,24 +5,32 @@
 #   namespace: argocd
 #   annotations:
 #     argocd.argoproj.io/sync-wave: "3"
-#     cert-manager.io/cluster-issuer: technitium-letsencrypt-staging
+#     #cert-manager.io/cluster-issuer: technitium-letsencrypt-staging
+#     cert-manager.io/cluster-issuer: technitium-letsencrypt
+#     traefik.ingress.kubernetes.io/router.entrypoints: websecure
+#     traefik.ingress.kubernetes.io/router.tls: "true"
+#     traefik.ingress.kubernetes.io/router.tls.domains.0.main: control-plane-1.group-4.doe24.chas-lab.dev
+
+#     # ingress.kubernetes.io/ssl-redirect: "true"
+#     # ingress.kubernetes.io/protocol: https
 # spec:
 #   ingressClassName: traefik
 #   tls:
-#   - hosts:
-#     - is-controlplane-0.group-4.doe24.chas-lab.dev
-#     secretName: argocd-tls
+#     - hosts:
+#         - control-plane-1.group-4.doe24.chas-lab.dev
+#       secretName: argocd-tls
 #   rules:
-#   - host: is-controlplane-0.group-4.doe24.chas-lab.dev
-#     http:
-#       paths:
-#       - path: /
-#         pathType: Prefix
-#         backend:
-#           service:
-#             name: argocd-server
-#             port:
-#               name: https
+#     - host: control-plane-1.group-4.doe24.chas-lab.dev
+#       http:
+#         paths:
+#           - path: /
+#             pathType: Prefix
+#             backend:
+#               service:
+#                 name: argocd-server
+#                 port:
+#                   number: 80
+
 
 
 apiVersion: networking.k8s.io/v1
@@ -32,14 +40,7 @@ metadata:
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: "3"
-    #cert-manager.io/cluster-issuer: technitium-letsencrypt-staging
     cert-manager.io/cluster-issuer: technitium-letsencrypt
-    traefik.ingress.kubernetes.io/router.entrypoints: websecure
-    traefik.ingress.kubernetes.io/router.tls: "true"
-    traefik.ingress.kubernetes.io/router.tls.domains.0.main: control-plane-1.group-4.doe24.chas-lab.dev
-
-    # ingress.kubernetes.io/ssl-redirect: "true"
-    # ingress.kubernetes.io/protocol: https
 spec:
   ingressClassName: traefik
   tls:
