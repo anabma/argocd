@@ -70,7 +70,7 @@ spec:
             exposedPort: 443
             # IMPORTANT: Don't force TLS here, let ingress handle it
             tls:
-              enabled: true
+              enabled: false
               
         service:
           type: LoadBalancer
