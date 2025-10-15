@@ -6,7 +6,8 @@ metadata:
 spec:
   secretName: wildcard-tls
   issuerRef:
-    name: technitium-letsencrypt-staging
+    #name: technitium-letsencrypt-staging
+    name: technitium-letsencrypt
     kind: ClusterIssuer
   commonName: "control-plane-1.group-4.doe24.chas-lab.dev"
   dnsNames:

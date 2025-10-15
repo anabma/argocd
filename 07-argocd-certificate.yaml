@@ -11,7 +11,8 @@ spec:
     - control-plane-1.group-4.doe24.chas-lab.dev 
     
   issuerRef:
-    name: technitium-letsencrypt-staging
+    #name: technitium-letsencrypt-staging
+    name: technitium-letsencrypt
     kind: ClusterIssuer
   ignoreDifferences:
     - group: cert-manager.io
