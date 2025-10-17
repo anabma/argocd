@@ -2,12 +2,12 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: wildcard-cert
-  namespace: traefik
+  namespace: cert-manager
 spec:
   secretName: wildcard-tls
   issuerRef:
     #name: technitium-letsencrypt-staging
-    name: technitium-letsencrypt
+    name: technitium-letsencrypt-staging
     kind: ClusterIssuer
   commonName: "control-plane-1.group-4.doe24.chas-lab.dev"
   dnsNames:

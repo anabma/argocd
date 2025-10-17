@@ -12,7 +12,7 @@ spec:
     
   issuerRef:
     #name: technitium-letsencrypt-staging
-    name: technitium-letsencrypt
+    name: technitium-letsencrypt-staging
     kind: ClusterIssuer
   ignoreDifferences:
     - group: cert-manager.io
