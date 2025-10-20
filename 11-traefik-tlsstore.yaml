@@ -5,4 +5,4 @@ metadata:
   namespace: cert-manager
 spec:
   defaultCertificate:
-    secretName: wildcard-tls
+    secretName: wildcard-cert
