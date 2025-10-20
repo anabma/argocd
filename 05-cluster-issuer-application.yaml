@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://gitlab.com/devopsgp4/argocd.git
     targetRevision: HEAD
-    path: cluster-issuer
+    path: cluster-issuer/cluster-issuer-staging.yaml
     directory:
       recurse: true
   destination:
