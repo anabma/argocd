@@ -19,4 +19,4 @@ spec:
             authTokenSecretRef:
               name: technitium-api-token
               key: api-token
-              namespace: cert-manager
+              # namespace: cert-manager
