@@ -46,7 +46,7 @@ spec:
   tls:
     - hosts:
         - control-plane-1.group-4.doe24.chas-lab.dev
-      secretName: argocd-tls
+      secretName: wildcard-tls
   rules:
     - host: control-plane-1.group-4.doe24.chas-lab.dev
       http:
