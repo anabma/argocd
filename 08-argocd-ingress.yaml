@@ -44,10 +44,10 @@ metadata:
     # cert-manager.io/cluster-issuer: technitium-letsencrypt-staging
 spec:
   ingressClassName: traefik
-  # tls:
-  #   - hosts:
-  #       - control-plane-1.group-4.doe24.chas-lab.dev
-  #     secretName: wildcard-cert
+  tls:
+    - hosts:
+        - control-plane-1.group-4.doe24.chas-lab.dev
+      secretName: wildcard-cert
   rules:
     - host: control-plane-1.group-4.doe24.chas-lab.dev
       http:
