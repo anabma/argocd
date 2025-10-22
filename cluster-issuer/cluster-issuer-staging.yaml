@@ -1,8 +1,30 @@
+# apiVersion: cert-manager.io/v1
+# kind: ClusterIssuer
+# metadata:
+#   name: technitium-letsencrypt-staging
+#   # NOTE: ClusterIssuer is cluster-scoped; do not set namespace here.
+# spec:
+#   acme:
+#     server: https://acme-staging-v02.api.letsencrypt.org/directory
+#     email: dildar.sallabas@gmail.com
+#     privateKeySecretRef:
+#       name: acme-letsencrypt-staging-key
+#     solvers:
+#     - dns01:
+#         webhook:
+#           groupName: acme.xver.cloud
+#           solverName: technitium
+#           config:
+#             serverUrl: https://ns1.chas-lab.dev
+#             authTokenSecretRef:
+#               name: technitium-api-token
+#               key: api-token
+#               # namespace: cert-amanager
+
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
-  name: technitium-letsencrypt-staging
-  # NOTE: ClusterIssuer is cluster-scoped; do not set namespace here.
+  name: letsencrypt-staging
 spec:
   acme:
     server: https://acme-staging-v02.api.letsencrypt.org/directory
@@ -10,13 +32,11 @@ spec:
     privateKeySecretRef:
       name: acme-letsencrypt-staging-key
     solvers:
-    - dns01:
-        webhook:
-          groupName: acme.xver.cloud
-          solverName: technitium
-          config:
-            serverUrl: https://ns1.chas-lab.dev
-            authTokenSecretRef:
-              name: technitium-api-token
-              key: api-token
-              # namespace: cert-manager
+      - dns01:
+          rfc2136:
+            nameserver: ns1.chas-lab.dev:53
+            tsigKeyName: group-4.  # Replace with actual key name
+            tsigAlgorithm: HMACSHA256  # Or your actual algorithm
+            tsigSecretSecretRef:
+              name: rfc2136-credentials
+              key: shrc2oWVFc99C4ahMoLOE6fST7QVXTYjjdzHxfKa+TY=
