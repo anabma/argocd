@@ -8,7 +8,7 @@ spec:
   secretName: wildcard-cert
   issuerRef:
     #name: technitium-letsencrypt-staging
-    name: technitium-letsencrypt-staging
+    name: letsencrypt-issuer
     kind: ClusterIssuer
   commonName: "*.group-4.doe24.chas-lab.dev"
   dnsNames:
