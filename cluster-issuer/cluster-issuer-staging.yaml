@@ -11,7 +11,7 @@ spec:
     solvers:
       - dns01:
           rfc2136:
-            nameserver: ns1.chas-lab.dev:53
+            nameserver: ns1.chas-lab.dev
             tsigKeyName: group-4.  # Replace with actual key name
             tsigAlgorithm: HMACSHA256  # Or your actual algorithm
             tsigSecretSecretRef:
