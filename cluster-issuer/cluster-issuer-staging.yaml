@@ -16,4 +16,4 @@ spec:
             tsigAlgorithm: HMACSHA256  # Or your actual algorithm
             tsigSecretSecretRef:
               name: rfc2136-credentials
-              key: shrc2oWVFc99C4ahMoLOE6fST7QVXTYjjdzHxfKa+TY=
+              key: tsig_secret-key
