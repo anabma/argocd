@@ -2,15 +2,13 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: wildcard-cert
-  # namespace: cert-manager
   namespace: kube-system
 spec:
   secretName: wildcard-cert
   issuerRef:
-    #name: technitium-letsencrypt-staging
     name: letsencrypt-staging
     kind: ClusterIssuer
-  commonName: "*.group-4.doe24.chas-lab.dev"
+  # commonName: "*.group-4.doe24.chas-lab.dev"
   dnsNames:
     - "*.group-4.doe24.chas-lab.dev"
     - "group-4.doe24.chas-lab.dev" 
