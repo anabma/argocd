@@ -41,6 +41,7 @@ metadata:
   # namespace: kube-system
   annotations:
     argocd.argoproj.io/sync-wave: "3"
+    traefik.ingress.kubernetes.io/router.tls.certresolver: letsencrypt
     # cert-manager.io/cluster-issuer: technitium-letsencrypt-staging
 spec:
   ingressClassName: traefik
