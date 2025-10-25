@@ -1,8 +1,10 @@
+# Deploys ClusterIssuer manifest (thats in /cluster-issuer directory)
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: letsencrypt-staging
+  name: letsencrypt
   namespace: argocd
+  sync-wave: "1"
 spec:
   project: default
   source:
@@ -11,6 +13,7 @@ spec:
     path: cluster-issuer
     directory:
       recurse: true
+  # Deploys the manifest in cert-manager namespace
   destination:
     server: https://kubernetes.default.svc
     namespace: cert-manager
