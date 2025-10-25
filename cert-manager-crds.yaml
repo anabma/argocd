@@ -1,8 +1,8 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: install-cert-manager-crds
-  namespace: cert-manager
+  name: install-cert-manager-pre
+  namespace: default
   annotations:
     argocd.argoproj.io/hook: PreSync
     argocd.argoproj.io/hook-delete-policy: HookSucceeded
@@ -11,10 +11,14 @@ spec:
     spec:
       restartPolicy: OnFailure
       containers:
-      - name: install-crds
+      - name: install-crds-and-ns
         image: bitnami/kubectl:latest
         command:
-          - /bin/sh
-          - -c
-          - |
-            kubectl apply -f https://github.com/cert-manager/cert-manager/releases/latest/download/cert-manager.crds.yaml
+        - /bin/sh
+        - -c
+        - |
+          # Create namespace for cert-manager if it doesn't exist
+          kubectl get ns cert-manager || kubectl create ns cert-manager
+          
+          # Install CRDs
+          kubectl apply -f https://github.com/cert-manager/cert-manager/releases/latest/download/cert-manager.crds.yaml
