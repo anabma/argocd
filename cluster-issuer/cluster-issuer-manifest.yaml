@@ -5,10 +5,10 @@ metadata:
   name: letsencrypt
 spec:
   acme:
-    server: https://acme-staging-v02.api.letsencrypt.org/directory
+    server: https://acme-v02.api.letsencrypt.org/directory
     email: dildar.sallabas@gmail.com
     privateKeySecretRef:
-      name: acme-letsencrypt-key
+      name: acme-letsencrypt-prod-key
     solvers:
       - dns01:
           # Dynamic DNS record updating/config using RFC2136 protocol
