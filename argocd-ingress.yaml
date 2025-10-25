@@ -20,6 +20,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: argocd-server
+                name: argocd-ingress
                 port:
                   number: 80
