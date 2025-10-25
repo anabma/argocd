@@ -1,0 +1,25 @@
+# Ingress routes traffic to the cluster
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: argocd-server
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "3"
+spec:
+  ingressClassName: traefik
+  tls:
+    - hosts:
+        - control-plane-1.group-4.doe24.chas-lab.dev
+      secretName: wildcard-cert
+  rules:
+    - host: control-plane-1.group-4.doe24.chas-lab.dev
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: argocd-server
+                port:
+                  number: 80
