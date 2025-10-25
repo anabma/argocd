@@ -2,13 +2,19 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: install-cert-manager-crds
+  namespace: cert-manager
   annotations:
     argocd.argoproj.io/hook: PreSync
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
 spec:
   template:
     spec:
+      restartPolicy: OnFailure
       containers:
       - name: install-crds
-        image: bitnami/kubectl
-        command: ["kubectl", "apply", "-f", "https://github.com/cert-manager/cert-manager/releases/latest/download/cert-manager.crds.yaml"]
-      restartPolicy: OnFailure
+        image: bitnami/kubectl:latest
+        command:
+          - /bin/sh
+          - -c
+          - |
+            kubectl apply -f https://github.com/cert-manager/cert-manager/releases/latest/download/cert-manager.crds.yaml
