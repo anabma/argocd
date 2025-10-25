@@ -8,7 +8,7 @@ metadata:
 spec:
   secretName: wildcard-cert
   issuerRef:
-    name: letsencrypt-prod
+    name: letsencrypt
     # Clusterwide issuer
     kind: ClusterIssuer
   dnsNames:
