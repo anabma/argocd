@@ -5,7 +5,7 @@ metadata:
   name: argocd-ingress
   namespace: argocd
   annotations:
-    argocd.argoproj.io/sync-wave: "4"
+    argocd.argoproj.io/sync-wave: "2"
 spec:
   ingressClassName: traefik
   tls:
@@ -20,6 +20,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: argocd-ingress
+                name: argocd-server
                 port:
                   number: 80
