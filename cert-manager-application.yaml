@@ -25,10 +25,5 @@ spec:
       selfHeal: true
     syncOptions:
     - CreateNamespace=true
-  spec:
-    containers:
-    # Wait job to ensure cert-manager is fully synced before proceeding
-      - name: wait for cert-manager sync to complete
-        image: alpine:latest
-        command: ["/bin/sh", "-c", "sleep 20"]
+
         

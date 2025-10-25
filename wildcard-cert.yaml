@@ -5,6 +5,7 @@ metadata:
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: "4"
+    argocd.argoproj.io/depends-on: cert-manager
 spec:
   secretName: wildcard-cert
   issuerRef:
