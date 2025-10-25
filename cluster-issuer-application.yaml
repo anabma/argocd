@@ -4,7 +4,7 @@ kind: Application
 metadata:
   name: letsencrypt
   namespace: argocd
-  sync-wave: "1"
+  argocd.argoproj.io/sync-wave: "1"
 spec:
   project: default
   source:
