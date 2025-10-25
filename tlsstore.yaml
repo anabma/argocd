@@ -4,7 +4,8 @@ kind: TLSStore
 metadata:
   name: default
   namespace: kube-system
-  argocd.argoproj.io/sync-wave: "3"
+  annotations:
+    argocd.argoproj.io/sync-wave: "3"
 spec:
   defaultCertificate:
     secretName: wildcard-cert

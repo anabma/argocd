@@ -4,7 +4,8 @@ kind: Application
 metadata:
   name: letsencrypt-cluster-issuer
   namespace: argocd
-  argocd.argoproj.io/sync-wave: "1"
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
 spec:
   project: default
   source:
