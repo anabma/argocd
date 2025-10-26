@@ -6,6 +6,8 @@ metadata:
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: "3"
+    ingress.kubernetes.io/ssl-redirect: "false"
+    ingress.kubernetes.io/backend-protocol: "HTTP"
 spec:
   ingressClassName: traefik
   tls:
@@ -16,7 +18,7 @@ spec:
     - host: control-plane-1.group-4.doe24.chas-lab.dev
       http:
         paths:
-          - path: /
+          - path: /argocd
             pathType: Prefix
             backend:
               service:
