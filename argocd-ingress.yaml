@@ -12,10 +12,10 @@ spec:
   ingressClassName: traefik
   tls:
     - hosts:
-        - control-plane-1.group-4.doe24.chas-lab.dev
+        - control-plane-1.exam.doe24.chas-lab.dev
       secretName: wildcard-cert
   rules:
-    - host: control-plane-1.group-4.doe24.chas-lab.dev
+    - host: control-plane-1.exam.doe24.chas-lab.dev
       http:
         paths:
           - path: /

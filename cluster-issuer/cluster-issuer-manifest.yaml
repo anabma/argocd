@@ -16,7 +16,7 @@ spec:
             nameserver: ns1.chas-lab.dev
             # Reference data for secret to access name server
             # TSIG used to authenticate DNS requests between servers
-            tsigKeyName: group-4.
+            tsigKeyName: exam.
             tsigAlgorithm: HMACSHA256
             tsigSecretSecretRef:
               name: rfc2136-credentials
